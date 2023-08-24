@@ -1,0 +1,23 @@
+#!/usr/bin/bash
+#PBS -N 4fastp
+#PBS -q normal
+#PBS -l nodes=1:ppn=16
+#PBS -l walltime=30:00:00
+#PBS -k oe
+#PBS -j oe
+#PBS -o /home/chrisl/microplastics/out/fastp/batch4.txt
+#PBS -m abe
+#PBS -M u21652938@tuks.co.za
+
+cd /nlustre/users/chrisl/microplastics/data
+module load fastp-0.23.2
+fastp -i input/rawdata/20082D-07-10_S27_L001_R1_001.fastq.gz -I input/rawdata/20082D-07-10_S27_L001_R2_001.fastq.gz -o fastp/reads/10_R1.fastq.gz -O fastp/reads/10_R2.fastq.gz 					--detect_adapter_for_pe -cpD -w 16 -h fastp/reports/10.html -j fastp/reports/10.json
+fastp -i input/rawdata/20082D-07-47_S47_L001_R1_001.fastq.gz -I input/rawdata/20082D-07-47_S47_L001_R2_001.fastq.gz -o fastp/reads/45_R1.fastq.gz -O fastp/reads/45_R2.fastq.gz 					--detect_adapter_for_pe -cpD -w 16 -h fastp/reports/45.html -j fastp/reports/45.json
+fastp -i input/rawdata/20082D-07-54_S54_L001_R1_001.fastq.gz -I input/rawdata/20082D-07-54_S54_L001_R2_001.fastq.gz -o fastp/reads/52_R1.fastq.gz -O fastp/reads/52_R2.fastq.gz 					--detect_adapter_for_pe -cpD -w 16 -h fastp/reports/52.html -j fastp/reports/52.json
+fastp -i input/rawdata/20082D-07-33_S0_L001_R1_001.fastq.gz -I input/rawdata/20082D-07-33_S0_L001_R2_001.fastq.gz -o fastp/reads/31_R1.fastq.gz -O fastp/reads/31_R2.fastq.gz 					--detect_adapter_for_pe -cpD -w 16 -h fastp/reports/31.html -j fastp/reports/31.json
+fastp -i input/rawdata/20082D-07-09_S3_L001_R1_001.fastq.gz -I input/rawdata/20082D-07-09_S3_L001_R2_001.fastq.gz -o fastp/reads/09_R1.fastq.gz -O fastp/reads/09_R2.fastq.gz 					--detect_adapter_for_pe -cpD -w 16 -h fastp/reports/09.html -j fastp/reports/09.json
+fastp -i input/rawdata/20082D-07-37_S34_L001_R1_001.fastq.gz -I input/rawdata/20082D-07-37_S34_L001_R2_001.fastq.gz -o fastp/reads/35_R1.fastq.gz -O fastp/reads/35_R2.fastq.gz 					--detect_adapter_for_pe -cpD -w 16 -h fastp/reports/35.html -j fastp/reports/35.json
+fastp -i input/rawdata/20082D-07-25_S36_L001_R1_001.fastq.gz -I input/rawdata/20082D-07-25_S36_L001_R2_001.fastq.gz -o fastp/reads/24_R1.fastq.gz -O fastp/reads/24_R2.fastq.gz 					--detect_adapter_for_pe -cpD -w 16 -h fastp/reports/24.html -j fastp/reports/24.json
+fastp -i input/rawdata/20082D-07-53_S0_L001_R1_001.fastq.gz -I input/rawdata/20082D-07-53_S0_L001_R2_001.fastq.gz -o fastp/reads/51_R1.fastq.gz -O fastp/reads/51_R2.fastq.gz 					--detect_adapter_for_pe -cpD -w 16 -h fastp/reports/51.html -j fastp/reports/51.json
+fastp -i input/rawdata/20082D-07-23_S30_L001_R1_001.fastq.gz -I input/rawdata/20082D-07-23_S30_L001_R2_001.fastq.gz -o fastp/reads/22_R1.fastq.gz -O fastp/reads/22_R2.fastq.gz 					--detect_adapter_for_pe -cpD -w 16 -h fastp/reports/22.html -j fastp/reports/22.json
+fastp -i input/rawdata/20082D-07-05_S11_L001_R1_001.fastq.gz -I input/rawdata/20082D-07-05_S11_L001_R2_001.fastq.gz -o fastp/reads/05_R1.fastq.gz -O fastp/reads/05_R2.fastq.gz 					--detect_adapter_for_pe -cpD -w 16 -h fastp/reports/05.html -j fastp/reports/05.json

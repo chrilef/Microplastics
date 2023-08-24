@@ -1,0 +1,15 @@
+#!/bin/bash
+#PBS -N maxbin
+#PBS -l nodes=1:ppn=28
+#PBS -q normal
+#PBS -l walltime=30:00:00
+#PBS -o /nlustre/users/chrisl/microplastics/data
+#PBS -e /nlustre/users/chrisl/microplastics/data
+
+module load checkm
+
+bins=/nlustre/users/chrisl/microplastics/data/maxbin_out/59_bins/bins
+out=/nlustre/users/chrisl/microplastics/data/maxbin_out/59_bins/quality_bins
+
+checkm lineage_wf -t 28 -x fasta $bins /nlustre/users/chrisl/microplastics/data/maxbin_out/59_bins/checkM
+

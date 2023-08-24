@@ -1,0 +1,14 @@
+#
+cd /nlustre/users/chrisl/microplastics/data/fastp/reads
+
+bgzip *.fastq
+for sample in *R1*
+
+do 
+
+base=$(basename $sample _R1.fastq.gz)
+
+echo $base 
+
+done
+

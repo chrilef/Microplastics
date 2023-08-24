@@ -1,0 +1,8 @@
+cd /nlustre/users/chrisl/microplastics/data/maxbin_out/allbins
+infile=/nlustre/users/chrisl/microplastics/data/maxbin_out/mediumqual.txt
+while IFS= read -r line; do
+    if [[ -f ${line}".fasta" ]]
+    then 
+    	echo $line
+    fi  
+done < $infile

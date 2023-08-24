@@ -1,0 +1,28 @@
+#!/bin/bash
+#PBS -N hmmer
+#PBS -l nodes=1:ppn=28
+#PBS -q normal
+#PBS -l walltime=30:00:00
+#PBS -o /nlustre/users/chrisl/microplastics/data/stdouts
+#PBS -e /nlustre/users/chrisl/microplastics/data/stdouts
+
+module load muscle-3.8.31
+module load hmmer-3.3.2
+
+profile_number=1
+infile=/nlustre/users/chrisl/microplastics/data/prodigal_out/unq_enzymes.txt
+while read -r line 
+do
+out=/nlustre/users/chrisl/microplastics/data/hmm_out/PDB
+muscle -in $inp -out $out
+done < $infile
+
+inp=/nlustre/users/chrisl/microplastics/data/prodigal_out/PlasticDB.fasta
+out=/nlustre/users/chrisl/microplastics/data/hmm_out/PlasticDB_aligned.fasta
+
+mkdir hmm_out
+cd hmm_out
+
+hmmbuild plastic_profile.hmm $inp
+
+
